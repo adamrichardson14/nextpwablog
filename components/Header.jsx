@@ -1,9 +1,33 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+const MdHeaderLink = ({ text, href, router }) => (
+  <a
+    href={href}
+    className={`px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ${
+      router.pathname === href ? 'bg-gray-700' : 'bg-gray-800'
+    }`}
+  >
+    {text}
+  </a>
+);
+
+const MobileHeaderLink = ({ text, href, router }) => (
+  <a
+    href={href}
+    className={`block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ${
+      router.pathname === href ? 'bg-gray-900' : 'bg-gray-800'
+    }`}
+  >
+    {text}
+  </a>
+);
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -23,40 +47,13 @@ const Header = () => {
               </div>
               <div className='hidden md:block'>
                 <div className='ml-10 flex items-baseline space-x-4'>
-                  <a
-                    href='/blog'
-                    className='px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Blog
-                  </a>
-
-                  <a
-                    href='#'
-                    className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Team
-                  </a>
-
-                  <a
-                    href='#'
-                    className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Projects
-                  </a>
-
-                  <a
-                    href='#'
-                    className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Calendar
-                  </a>
-
-                  <a
-                    href='#'
-                    className='px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Reports
-                  </a>
+                  <MdHeaderLink text='Blog' href='/blog' router={router} />
+                  <MdHeaderLink
+                    text='Contact'
+                    href='/contact'
+                    router={router}
+                  />
+                  <MdHeaderLink text='About' href='/about' router={router} />
                 </div>
               </div>
             </div>
@@ -109,40 +106,9 @@ const Header = () => {
     --> */}
         <div className={`${!open ? 'hidden' : 'block'}`}>
           <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-            <a
-              href='/blog'
-              className='block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'
-            >
-              Blog
-            </a>
-
-            <a
-              href='#'
-              className='block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-            >
-              Team
-            </a>
-
-            <a
-              href='#'
-              className='block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-            >
-              Projects
-            </a>
-
-            <a
-              href='#'
-              className='block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-            >
-              Calendar
-            </a>
-
-            <a
-              href='#'
-              className='block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-            >
-              Reports
-            </a>
+            <MobileHeaderLink text='Blog' href='/blog' router={router} />
+            <MobileHeaderLink text='Contact' href='/contact' router={router} />
+            <MobileHeaderLink text='About' href='/about' router={router} />
           </div>
         </div>
       </nav>

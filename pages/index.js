@@ -6,7 +6,7 @@ import Posts from '../components/Posts';
 import CategoryMenu from '../components/CategoryMenu';
 import IntroText from '../components/IntroText';
 
-const Home = ({ posts, categories }) => {
+const Home = () => {
   return (
     <>
       <Header />

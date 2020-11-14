@@ -6,6 +6,7 @@ const CategoryMenu = (props) => (
       {props.tags.map((category) => {
         return (
           <Link
+            key={category.slug}
             href={{
               pathname: '/blog/category/[slug]/[page]',
               query: {
