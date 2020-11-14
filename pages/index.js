@@ -1,26 +1,72 @@
+import Link from 'next/link';
 import React from 'react';
 import Header from '../components/Header';
-import { getData } from '../utils/utils';
-import Posts from '../components/Posts';
-import CategoryMenu from '../components/CategoryMenu';
-import IntroText from '../components/IntroText';
+import { getData, truncateString } from '../utils/utils';
 
-const Home = ({ posts, categories }) => {
+const Home = ({ posts }) => {
   return (
     <>
       <Header />
-
-      <IntroText
-        title='Welcome to my blog'
-        description='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut similique
-      cupiditate voluptatibus qui explicabo quasi quas, doloremque dolores, ad
-      repellendus facere architecto optio vitae illum nihil ipsam, eum libero
-      quia? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
-      minus ullam nesciunt'
-      />
-      <CategoryMenu tags={categories.tags} />
-
-      <Posts posts={posts.posts} />
+      <main className='w-11/12 mx-auto py-2'>
+        <div>
+          {posts.posts.map((post) => {
+            return (
+              <>
+                <div className='flex flex-row items-center py-2'>
+                  <Link
+                    href={{
+                      pathname: '/post/[slug]',
+                      query: {
+                        slug: post.slug,
+                      },
+                    }}
+                  >
+                    <a>
+                      <img
+                        src={post.feature_image}
+                        alt={post.title}
+                        className='w-20 h-20 rounded-full shadow-md mr-4'
+                      />
+                    </a>
+                  </Link>
+                  <div>
+                    <Link
+                      href={{
+                        pathname: '/post/[slug]',
+                        query: {
+                          slug: post.slug,
+                        },
+                      }}
+                    >
+                      <a>
+                        <h2 className='font-bold'>{post.title}</h2>
+                      </a>
+                    </Link>
+                    <span className='text-sm text-gray-600'>
+                      {new Date(post.published_at).toDateString()}
+                    </span>
+                  </div>
+                </div>
+                <p className='text-gray-700'>
+                  {truncateString(post.custom_excerpt, 120)}
+                </p>
+                <Link
+                  href={{
+                    pathname: '/post/[slug]',
+                    query: {
+                      slug: post.slug,
+                    },
+                  }}
+                >
+                  <button className='text-yellow-500 text-sm hover:text-yellow-600'>
+                    Read full post
+                  </button>
+                </Link>
+              </>
+            );
+          })}
+        </div>
+      </main>
     </>
   );
 };
@@ -32,14 +78,10 @@ export const getStaticProps = async () => {
   const posts = await getData(
     `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/?key=${API_KEY}&fields=title,slug,feature_image,custom_excerpt,published_at`
   );
-  const categories = await getData(
-    `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/tags/?key=${API_KEY}`
-  );
 
   return {
     props: {
       posts,
-      categories,
     },
     revalidate: 60,
   };
