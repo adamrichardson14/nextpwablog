@@ -7,7 +7,7 @@ const CategoryMenu = (props) => (
         return (
           <Link
             href={{
-              pathname: '/category/[slug]/[page]',
+              pathname: '/blog/category/[slug]/[page]',
               query: {
                 slug: category.slug,
                 page: 1,

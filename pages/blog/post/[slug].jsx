@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from '../../components/Header';
-import { getData } from '../../utils/utils';
+import Header from '../../../components/Header';
+import { getData } from '../../../utils/utils';
 import { useRouter } from 'next/router';
+import BackButton from '../../../components/BackButton';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -45,6 +46,7 @@ const Post = ({ post }) => {
 
           <main className='mt-3'>
             <div dangerouslySetInnerHTML={{ __html: singlePost.html }}></div>
+            <BackButton router={router} />
           </main>
         </div>
       </div>

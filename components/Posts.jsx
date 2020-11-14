@@ -10,7 +10,7 @@ const Posts = (props) => (
             <div className='flex flex-row items-center py-2'>
               <Link
                 href={{
-                  pathname: '/post/[slug]',
+                  pathname: '/blog/post/[slug]',
                   query: {
                     slug: post.slug,
                   },
@@ -27,7 +27,7 @@ const Posts = (props) => (
               <div>
                 <Link
                   href={{
-                    pathname: '/post/[slug]',
+                    pathname: '/blog/post/[slug]',
                     query: {
                       slug: post.slug,
                     },
@@ -47,7 +47,7 @@ const Posts = (props) => (
             </p>
             <Link
               href={{
-                pathname: '/post/[slug]',
+                pathname: '/blog/post/[slug]',
                 query: {
                   slug: post.slug,
                 },

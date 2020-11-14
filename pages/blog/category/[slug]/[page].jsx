@@ -1,11 +1,12 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { getData } from '../../../utils/utils';
-import CategoryMenu from '../../../components/CategoryMenu';
-import Header from '../../../components/Header';
-import Posts from '../../../components/Posts';
+import { getData } from '../../../../utils/utils';
+import CategoryMenu from '../../../../components/CategoryMenu';
+import Header from '../../../../components/Header';
+import Posts from '../../../../components/Posts';
 import Link from 'next/link';
-import IntroText from '../../../components/IntroText';
+import IntroText from '../../../../components/IntroText';
+import BackButton from '../../../../components/BackButton';
 
 const Category = ({
   posts,
@@ -33,7 +34,7 @@ const Category = ({
             <span>
               <Link
                 href={{
-                  pathname: '/category/[slug]/[page]',
+                  pathname: '/blog/category/[slug]/[page]',
                   query: {
                     slug: slug,
                     page: index + 1,
@@ -53,6 +54,7 @@ const Category = ({
             </span>
           );
         })}
+        <BackButton router={router} />
       </div>
     </>
   );
