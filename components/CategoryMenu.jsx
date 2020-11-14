@@ -7,13 +7,14 @@ const CategoryMenu = (props) => (
         return (
           <Link
             href={{
-              pathname: '/category/[slug]',
+              pathname: '/category/[slug]/[page]',
               query: {
                 slug: category.slug,
+                page: 1,
               },
             }}
           >
-            <button className='uppercase font-semibold text-base   py-1 px-2 rounded-lg border border-gray-100'>
+            <button className='uppercase font-semibold text-md   py-1 px-2 rounded-lg border border-gray-100'>
               {category.name}
             </button>
           </Link>

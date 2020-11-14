@@ -7,7 +7,6 @@ const Post = ({ post }) => {
   const router = useRouter();
   if (router.isFallback) return <h1>Loading...</h1>;
   const singlePost = post.posts[0];
-  console.log(singlePost);
   return (
     <>
       <Header />
@@ -60,7 +59,6 @@ export const getStaticProps = async ({ params }) => {
   const post = await getData(
     `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/slug/${params.slug}?key=${API_KEY}&include=authors`
   );
-  console.log(post);
   return {
     props: {
       post,
