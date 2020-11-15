@@ -80,10 +80,10 @@ export const getStaticProps = async ({ params }) => {
     `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/slug/${params.slug}?key=${API_KEY}&include=authors`
   );
   return {
+    revalidate: 60,
     props: {
       post,
     },
-    revalidate: 60,
   };
 };
 

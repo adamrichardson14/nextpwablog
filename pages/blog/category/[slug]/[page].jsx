@@ -76,6 +76,7 @@ export const getStaticProps = async ({ params }) => {
   );
 
   return {
+    revalidate: 60,
     props: {
       posts,
       categories,
@@ -83,7 +84,6 @@ export const getStaticProps = async ({ params }) => {
       currentPage: params.page,
       slug: params.slug,
     },
-    revalidate: 60,
   };
 };
 
