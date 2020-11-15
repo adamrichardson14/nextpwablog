@@ -7,7 +7,7 @@ const MdHeaderLink = ({ text, href, router }) => (
   <a
     href={href}
     className={`px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ${
-      router.pathname === href ? 'bg-gray-700' : 'bg-gray-800'
+      router.pathname === href ? 'bg-gray-700' : 'bg-black'
     }`}
   >
     {text}
@@ -18,7 +18,7 @@ const MobileHeaderLink = ({ text, href, router }) => (
   <a
     href={href}
     className={`block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ${
-      router.pathname === href ? 'bg-gray-900' : 'bg-gray-800'
+      router.pathname === href ? 'bg-gray-700' : 'bg-black'
     }`}
   >
     {text}
@@ -34,7 +34,7 @@ const Header = () => {
         <title>Next JS Blog</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
-      <nav className='bg-gray-800'>
+      <nav className='bg-black'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between h-16'>
             <div className='flex items-center justify-between w-full'>

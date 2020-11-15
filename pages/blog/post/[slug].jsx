@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import BackButton from '../../../components/BackButton';
 import Head from 'next/head';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -33,9 +34,13 @@ const Post = ({ post }) => {
           </header>
           <div className='w-11/12 mx-auto my-2 md:my-0 sm:flex sm:flex-row sm:justify-between sm:items-center md:w-1/2 md:flex-col md:justify-center space-y-5 md:bg-gray-50'>
             <div>
-              <h1 className='font-bold text-xl xl:text-3xl md:text-2xl'>
+              <motion.h1
+                animate={{ scale: 1 }}
+                layoutId={post.slug}
+                className='font-bold text-xl xl:text-3xl md:text-2xl'
+              >
                 {singlePost.title}
-              </h1>
+              </motion.h1>
               <div className='space-x-3'>
                 <span className='md:text-gray-700 text-xs lg:text-sm uppercase font-semibold md:text-xs'>
                   {new Date(singlePost.published_at).toDateString()}

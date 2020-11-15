@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { getData, truncateString } from '../utils/utils';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 const Posts = (props) => (
   <main className='w-11/12 mx-auto py-2 lg:max-w-7xl'>
     <div className='sm:-mt-4 lg:flex flex-wrap justify-center'>
@@ -51,9 +52,13 @@ const Posts = (props) => (
                   }}
                 >
                   <a>
-                    <h2 className='font-bold sm:text-lg md:text-xl lg:text-2xl'>
+                    <motion.h2
+                      animate={{ scale: 1 }}
+                      layoutId={post.slug}
+                      className='font-bold sm:text-lg md:text-xl lg:text-2xl'
+                    >
                       {post.title}
-                    </h2>
+                    </motion.h2>
                   </a>
                 </Link>
                 <span className='text-sm text-gray-600 lg:text-base'>
