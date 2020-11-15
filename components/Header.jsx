@@ -64,6 +64,8 @@ const Header = () => {
                 onClick={() => {
                   setOpen(!open);
                 }}
+                aria-label='Menu toggle button'
+                aria-expanded={`${open ? 'true' : 'false'}`}
                 className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'
               >
                 {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}

@@ -71,8 +71,6 @@ export const getStaticProps = async ({ params }) => {
     `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/tags/?key=${API_KEY}`
   );
 
-  console.log(posts);
-
   const currentCategory = await categories.tags.find(
     (cat) => cat.slug === params.slug
   );
