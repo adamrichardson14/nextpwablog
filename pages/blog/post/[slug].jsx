@@ -4,6 +4,7 @@ import { getData } from '../../../utils/utils';
 import { useRouter } from 'next/router';
 import BackButton from '../../../components/BackButton';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -20,10 +21,12 @@ const Post = ({ post }) => {
       <div>
         <div className='md:flex md:flex-row-reverse'>
           <header className='md:w-1/2'>
-            <img
+            <Image
               className='w-full h-56 object-cover md:h-120 sm:h-96 xl:h-140'
               src={singlePost.feature_image}
               alt={singlePost.title}
+              width={1200}
+              height={800}
             />
           </header>
           <div className='w-11/12 mx-auto my-2 md:my-0 sm:flex sm:flex-row sm:justify-between sm:items-center md:w-1/2 md:flex-col md:justify-center space-y-5 md:bg-gray-50'>

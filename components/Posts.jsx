@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { getData, truncateString } from '../utils/utils';
+import Image from 'next/image';
 const Posts = (props) => (
   <main className='w-11/12 mx-auto py-2 lg:max-w-7xl'>
     <div className='sm:-mt-4 lg:flex flex-wrap justify-center'>
       {props.posts.map((post) => {
         return (
           <React.Fragment key={post.slug}>
-            <div className='flex flex-row items-center sm:shadow-lg sm:rounded-r-lg sm:mt-4 sm:border sm:border-gray-100 lg:flex-col lg:w-5/12 lg:my-1 lg:mx-2 lg:shadow-sm lg:border-none lg:rounded-lg'>
+            <div className='flex flex-row items-center sm:shadow-lg sm:rounded-lg sm:mt-4 lg:flex-col lg:w-5/12 lg:my-1 lg:mx-2 lg:shadow-sm lg:border-none lg:rounded-lg'>
               <Link
                 href={{
                   pathname: '/blog/post/[slug]',
@@ -17,11 +18,25 @@ const Posts = (props) => (
                 }}
               >
                 <a>
-                  <img
-                    src={post.feature_image}
-                    alt={post.title}
-                    className='w-20 h-20 rounded-lg  sm:rounded-none shadow-md mr-4 sm:w-52 sm:h-40 object-cover object-center lg:w-full lg:h-60 lg:rounded-t-lg lg:shadow-none'
-                  />
+                  <div className='w-20 h-20 mr-4 sm:w-40 sm:h-40  lg:hidden'>
+                    <Image
+                      src={post.feature_image}
+                      alt={post.title}
+                      className='rounded-full sm:rounded-none sm:rounded-l-lg shadow-md  object-cover object-center  lg:rounded-t-lg lg:shadow-none'
+                      layout='responsive'
+                      width={1200}
+                      height={1200}
+                    />
+                  </div>
+                  <div className='hidden lg:block lg:w-full'>
+                    <Image
+                      src={post.feature_image}
+                      alt={post.title}
+                      className='lg:w-full lg:rounded-t-lg'
+                      width={1200}
+                      height={700}
+                    />
+                  </div>
                 </a>
               </Link>
               <div className='w-7/12 lg:w-full lg:p-2'>
