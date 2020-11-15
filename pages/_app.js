@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import '../styles/styles.css';
+import { AnimateSharedLayout } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }) {
           content='minimum-scale=5, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
         />
       </Head>
-      <Component {...pageProps} />
+      <AnimateSharedLayout>
+        <Component {...pageProps} />
+      </AnimateSharedLayout>
     </>
   );
 }

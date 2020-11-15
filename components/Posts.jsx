@@ -19,7 +19,10 @@ const Posts = (props) => (
                 }}
               >
                 <a>
-                  <div className='w-20 h-20 mr-4 sm:w-40 sm:h-40  lg:hidden'>
+                  <motion.div
+                    layoutId={post.slug}
+                    className='w-20 h-20 mr-4 sm:w-40 sm:h-40  lg:hidden'
+                  >
                     <Image
                       src={post.feature_image}
                       alt={post.title}
@@ -29,8 +32,11 @@ const Posts = (props) => (
                       quality={40}
                       layout='responsive'
                     />
-                  </div>
-                  <div className='hidden lg:block w-full'>
+                  </motion.div>
+                  <motion.div
+                    layoutId={post.slug}
+                    className='hidden lg:block w-full'
+                  >
                     <Image
                       src={post.feature_image}
                       alt={post.title}
@@ -39,7 +45,7 @@ const Posts = (props) => (
                       height={311}
                       quality={40}
                     />
-                  </div>
+                  </motion.div>
                 </a>
               </Link>
               <div className='w-7/12 lg:w-full lg:p-2'>
@@ -53,7 +59,6 @@ const Posts = (props) => (
                 >
                   <a>
                     <motion.h2
-                      animate={{ scale: 1 }}
                       layoutId={post.slug}
                       className='font-bold sm:text-lg md:text-xl lg:text-2xl'
                     >
