@@ -72,7 +72,7 @@ export default Category;
 export const getStaticProps = async ({ params }) => {
   const { API_KEY } = process.env;
   const posts = await getData(
-    `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/?key=${API_KEY}&filter=tag:${params.slug}&fields=title,slug,feature_image,custom_excerpt,published_at,featured&page=${params.page}&limit=1`
+    `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/?key=${API_KEY}&filter=tag:${params.slug}&fields=title,slug,feature_image,custom_excerpt,published_at,featured&page=${params.page}&limit=10`
   );
   const postMeta = await posts.meta;
 
