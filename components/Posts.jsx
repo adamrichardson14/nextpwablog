@@ -45,7 +45,7 @@ const Posts = (props) => (
                 <p className='text-gray-700 hidden sm:block'>
                   {truncateString(post.custom_excerpt, 120)}
                 </p>
-                <button className='text-yellow-700 text-base hover:text-yellow-600 hidden sm:block md:text-base lg:text-base py-1'>
+                <button className='text-yellow-700 text-base hover:text-yellow-600 hidden sm:block md:text-base lg:text-base'>
                   Read full post
                 </button>
               </div>
@@ -61,7 +61,7 @@ const Posts = (props) => (
                 },
               }}
             >
-              <button className='text-yellow-700 text-sm hover:text-yellow-600 sm:hidden'>
+              <button className='text-yellow-700 text-base hover:text-yellow-600 sm:hidden pb-2'>
                 Read full post
               </button>
             </Link>
