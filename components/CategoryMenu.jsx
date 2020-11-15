@@ -1,6 +1,6 @@
 import Link from 'next/link';
 const CategoryMenu = (props) => (
-  <div className='w-11/12 mx-auto'>
+  <div className='w-11/12 mx-auto lg:max-w-7xl'>
     <hr className='my-4 border-gray-50' />
     <nav className='flex justify-center text-yellow-500 space-x-2'>
       {props.tags.map((category) => {
