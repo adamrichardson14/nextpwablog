@@ -22,7 +22,7 @@ const Post = ({ post }) => {
         <div className='md:flex md:flex-row-reverse'>
           <header className='md:w-1/2'>
             <Image
-              className=''
+              className='object-cover'
               src={singlePost.feature_image}
               alt={singlePost.title}
               width={1200}

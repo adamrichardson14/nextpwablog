@@ -25,17 +25,18 @@ const Posts = (props) => (
                       className='rounded-full sm:rounded-none sm:rounded-l-lg shadow-md  object-cover object-center  lg:rounded-t-lg lg:shadow-none'
                       width={160}
                       height={160}
-                      quality={60}
+                      quality={40}
+                      layout='responsive'
                     />
                   </div>
-                  <div className='hidden lg:block lg:w-full'>
+                  <div className='hidden lg:block w-full'>
                     <Image
                       src={post.feature_image}
                       alt={post.title}
-                      className='lg:w-full lg:rounded-t-lg'
+                      className='lg:rounded-t-lg object-cover'
                       width={530}
                       height={311}
-                      quality={60}
+                      quality={40}
                     />
                   </div>
                 </a>
