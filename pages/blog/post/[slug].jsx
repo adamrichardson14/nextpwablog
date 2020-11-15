@@ -3,6 +3,7 @@ import Header from '../../../components/Header';
 import { getData } from '../../../utils/utils';
 import { useRouter } from 'next/router';
 import BackButton from '../../../components/BackButton';
+import Head from 'next/head';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -10,6 +11,11 @@ const Post = ({ post }) => {
   const singlePost = post.posts[0];
   return (
     <>
+      <Head>
+        <meta property='og:title' content={post.title} />
+        <meta property='og:description' content={post.custom_excerpt} />
+        <meta property='og:image' content={post.feature_image} />
+      </Head>
       <Header />
       <div>
         <div className='md:flex md:flex-row-reverse'>
