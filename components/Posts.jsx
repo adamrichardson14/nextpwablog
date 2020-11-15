@@ -24,8 +24,8 @@ const Posts = (props) => (
                       alt={post.title}
                       className='rounded-full sm:rounded-none sm:rounded-l-lg shadow-md  object-cover object-center  lg:rounded-t-lg lg:shadow-none'
                       layout='responsive'
-                      width={1200}
-                      height={1200}
+                      width={160}
+                      height={160}
                     />
                   </div>
                   <div className='hidden lg:block lg:w-full'>
@@ -33,8 +33,8 @@ const Posts = (props) => (
                       src={post.feature_image}
                       alt={post.title}
                       className='lg:w-full lg:rounded-t-lg'
-                      width={1200}
-                      height={700}
+                      width={530}
+                      height={311}
                     />
                   </div>
                 </a>
