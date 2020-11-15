@@ -23,7 +23,6 @@ const Posts = (props) => (
                       src={post.feature_image}
                       alt={post.title}
                       className='rounded-full sm:rounded-none sm:rounded-l-lg shadow-md  object-cover object-center  lg:rounded-t-lg lg:shadow-none'
-                      layout='responsive'
                       width={160}
                       height={160}
                       quality={60}
