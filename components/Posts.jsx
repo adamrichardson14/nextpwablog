@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 const Posts = (props) => (
   <main className='w-11/12 mx-auto py-2 lg:max-w-7xl'>
-    <div className='sm:-mt-4 lg:flex flex-wrap justify-center'>
+    <div className='sm:-mt-4 lg:grid lg:grid-cols-2 lg:gap-3'>
       {props.posts.map((post) => {
         return (
           <React.Fragment key={post.slug}>
-            <div className='flex flex-row items-center sm:shadow-lg sm:rounded-lg sm:mt-4 lg:flex-col lg:w-5/12 lg:my-1 lg:mx-2 lg:shadow-sm lg:border-none lg:rounded-lg'>
+            <div className='flex-row flex lg:flex-none items-center sm:shadow-lg sm:rounded-lg sm:mt-4 lg:flex-col lg:w-full lg:my-1 lg:shadow-xs lg:border-none lg:rounded-lg'>
               <Link
                 href={{
                   pathname: '/blog/post/[slug]',
@@ -20,7 +20,7 @@ const Posts = (props) => (
               >
                 <a>
                   <motion.div
-                    layoutId={post.slug}
+                    layoutId={'postImage'}
                     className='w-20 h-20 mr-4 sm:w-40 sm:h-40  lg:hidden'
                   >
                     <Image
@@ -34,21 +34,21 @@ const Posts = (props) => (
                     />
                   </motion.div>
                   <motion.div
-                    layoutId={post.slug}
-                    className='hidden lg:block w-full'
+                    layoutId={'postImage'}
+                    className='hidden lg:block'
                   >
                     <Image
                       src={post.feature_image}
                       alt={post.title}
                       className='lg:rounded-t-lg object-cover'
-                      width={530}
-                      height={311}
+                      width={600}
+                      height={350}
                       quality={40}
                     />
                   </motion.div>
                 </a>
               </Link>
-              <div className='w-7/12 lg:w-full lg:p-2'>
+              <div className='w-7/12 lg:w-full lg:px-2 lg:pb-2'>
                 <Link
                   href={{
                     pathname: '/blog/post/[slug]',
@@ -59,7 +59,8 @@ const Posts = (props) => (
                 >
                   <a>
                     <motion.h2
-                      layoutId={post.slug}
+                      layoutId={post.title}
+                      animate={{ scale: 1 }}
                       className='font-bold sm:text-lg md:text-xl lg:text-2xl'
                     >
                       {post.title}

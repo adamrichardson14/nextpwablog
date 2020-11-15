@@ -10,15 +10,17 @@ const Home = ({ posts, categories }) => {
   return (
     <>
       <Header />
-      <IntroText
-        title='Welcome to our Blog'
-        description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit molestias
+      <div className='wrapper max-w-7xl mx-auto'>
+        <IntroText
+          title='Welcome to our Blog'
+          description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit molestias
       itaque ex ea ullam ut fuga voluptas, numquam, mollitia illum impedit! Unde
       dolorem voluptates voluptatibus necessitatibus tenetur voluptas magnam
       voluptatem! luptatibus necessitatibus tenetur voluptas magnam voluptatem!'
-      />
-      <CategoryMenu tags={categories.tags} />
-      <Posts posts={posts.posts} />
+        />
+        <CategoryMenu tags={categories.tags} />
+        <Posts posts={posts.posts} />
+      </div>
     </>
   );
 };

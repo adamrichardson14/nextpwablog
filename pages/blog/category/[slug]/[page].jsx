@@ -21,40 +21,42 @@ const Category = ({
   return (
     <>
       <Header />
-      <IntroText
-        title={currentCategory.name}
-        description={currentCategory.description}
-      />
-      <CategoryMenu tags={categories.tags} />
-      <Posts posts={posts.posts} />
-      <div className='flex justify-center space-x-3 text-gray-500 font-semibold items-center text-md'>
-        <span className='text-sm'>Page:</span>
-        {Array.from({ length: posts.meta.pagination.pages }, (_, index) => {
-          return (
-            <span>
-              <Link
-                href={{
-                  pathname: '/blog/category/[slug]/[page]',
-                  query: {
-                    slug: slug,
-                    page: index + 1,
-                  },
-                }}
-              >
-                <a
-                  className={`${
-                    index === currentPage - 1
-                      ? 'text-yellow-500'
-                      : 'text-gray-500'
-                  }`}
+      <div className='wrapper max-w-7xl mx-auto'>
+        <IntroText
+          title={currentCategory.name}
+          description={currentCategory.description}
+        />
+        <CategoryMenu tags={categories.tags} />
+        <Posts posts={posts.posts} />
+        <div className='flex justify-center space-x-3 text-gray-500 font-semibold items-center text-md'>
+          <span className='text-sm'>Page:</span>
+          {Array.from({ length: posts.meta.pagination.pages }, (_, index) => {
+            return (
+              <span>
+                <Link
+                  href={{
+                    pathname: '/blog/category/[slug]/[page]',
+                    query: {
+                      slug: slug,
+                      page: index + 1,
+                    },
+                  }}
                 >
-                  {index + 1}
-                </a>
-              </Link>
-            </span>
-          );
-        })}
-        <BackButton router={router} />
+                  <a
+                    className={`${
+                      index === currentPage - 1
+                        ? 'text-yellow-500'
+                        : 'text-gray-500'
+                    }`}
+                  >
+                    {index + 1}
+                  </a>
+                </Link>
+              </span>
+            );
+          })}
+          <BackButton router={router} />
+        </div>
       </div>
     </>
   );

@@ -20,11 +20,8 @@ const Post = ({ post }) => {
       </Head>
       <Header />
       <div>
-        <motion.div
-          layoutId={post.slug}
-          className='md:flex md:flex-row-reverse'
-        >
-          <header className='md:w-1/2'>
+        <div className='md:flex md:flex-row-reverse'>
+          <header className='md:w-1/2' layoutId={'postImage'}>
             <Image
               className='object-cover'
               src={singlePost.feature_image}
@@ -39,7 +36,7 @@ const Post = ({ post }) => {
             <div>
               <motion.h1
                 animate={{ scale: 1 }}
-                layoutId={post.slug}
+                layoutId={'postTitle'}
                 className='font-bold text-xl xl:text-3xl md:text-2xl'
               >
                 {singlePost.title}
@@ -69,7 +66,7 @@ const Post = ({ post }) => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
         <hr className='my-3 border-gray-100 w-11/12 mx-auto md:hidden' />
         <main className='mt-3 w-11/12 mx-auto md:w-9/12 md:mt-5'>
           <div dangerouslySetInnerHTML={{ __html: singlePost.html }}></div>
