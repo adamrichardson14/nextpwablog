@@ -26,6 +26,7 @@ const Posts = (props) => (
                       layout='responsive'
                       width={160}
                       height={160}
+                      quality={60}
                     />
                   </div>
                   <div className='hidden lg:block lg:w-full'>
@@ -35,6 +36,7 @@ const Posts = (props) => (
                       className='lg:w-full lg:rounded-t-lg'
                       width={530}
                       height={311}
+                      quality={60}
                     />
                   </div>
                 </a>

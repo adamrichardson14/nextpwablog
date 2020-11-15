@@ -27,6 +27,7 @@ const Post = ({ post }) => {
               alt={singlePost.title}
               width={1200}
               height={800}
+              quality={60}
             />
           </header>
           <div className='w-11/12 mx-auto my-2 md:my-0 sm:flex sm:flex-row sm:justify-between sm:items-center md:w-1/2 md:flex-col md:justify-center space-y-5 md:bg-gray-50'>
