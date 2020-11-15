@@ -22,12 +22,13 @@ const Post = ({ post }) => {
         <div className='md:flex md:flex-row-reverse'>
           <header className='md:w-1/2'>
             <Image
-              className='w-full h-56 object-cover md:h-120 sm:h-96 xl:h-140'
+              className=''
               src={singlePost.feature_image}
               alt={singlePost.title}
               width={1200}
               height={800}
               quality={60}
+              layout='responsive'
             />
           </header>
           <div className='w-11/12 mx-auto my-2 md:my-0 sm:flex sm:flex-row sm:justify-between sm:items-center md:w-1/2 md:flex-col md:justify-center space-y-5 md:bg-gray-50'>

@@ -7,5 +7,6 @@ module.exports = withPWA({
   },
   images: {
     domains: ['res-3.cloudinary.com', 'res-2.cloudinary.com'],
+    deviceSizes: [320, 420, 768, 1024, 1200],
   },
 });
