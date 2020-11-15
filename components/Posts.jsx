@@ -61,13 +61,15 @@ const Posts = (props) => (
                 },
               }}
             >
-              <button className='text-yellow-700 text-base hover:text-yellow-600 sm:hidden pb-2'>
+              <button className='text-yellow-700 text-base hover:text-yellow-600 sm:hidden pb-3'>
                 Read full post
               </button>
             </Link>
           </React.Fragment>
         );
       })}
+
+      <hr className='border-gray-100 py-1' />
     </div>
   </main>
 );

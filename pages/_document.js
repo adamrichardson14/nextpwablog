@@ -103,10 +103,6 @@ class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#ffffff' />
           <meta name='msapplication-tap-highlight' content='no' />
           <meta name='theme-color' content='#ffffff' />
-          <meta
-            name='viewport'
-            content='minimum-scale=5, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
-          />
         </Head>
         <body>
           <Main />
