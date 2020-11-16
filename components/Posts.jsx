@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const Posts = (props) => (
   <main className='w-11/12 mx-auto py-2 lg:max-w-7xl'>
     <div className='sm:-mt-4 lg:grid lg:grid-cols-2 lg:gap-3'>
-      {props.posts.posts ? (
+      {!props.posts.posts ? (
         props.posts.map((post) => {
           return (
             <React.Fragment key={post.slug}>
