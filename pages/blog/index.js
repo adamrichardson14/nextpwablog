@@ -1,18 +1,20 @@
 import Link from 'next/link';
 import React from 'react';
-import Header from '../../components/Header';
 import { getData, truncateString } from '../../utils/utils';
 import Posts from '../../components/Posts';
 import CategoryMenu from '../../components/CategoryMenu';
 import IntroText from '../../components/IntroText';
 import Image from 'next/image';
 import FeaturedPost from '../../components/FeaturedPost';
+import Head from 'next/head';
 
 const Home = ({ posts, categories, featuredPost }) => {
   return (
     <>
-      <Header />
-      <div className='wrapper max-w-7xl mx-auto'>
+      <Head>
+        <title>My Awesome Blog</title>
+      </Head>
+      <div className='wrapper max-w-7xl mx-auto mb-5'>
         <IntroText
           title='Welcome to our Blog'
           description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit molestias

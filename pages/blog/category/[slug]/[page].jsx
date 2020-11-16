@@ -2,13 +2,13 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { getData } from '../../../../utils/utils';
 import CategoryMenu from '../../../../components/CategoryMenu';
-import Header from '../../../../components/Header';
 import Posts from '../../../../components/Posts';
 import Link from 'next/link';
 import IntroText from '../../../../components/IntroText';
 import BackButton from '../../../../components/BackButton';
 import Image from 'next/image';
 import FeaturedPost from '../../../../components/FeaturedPost';
+import Head from 'next/head';
 
 const Category = ({
   posts,
@@ -24,7 +24,9 @@ const Category = ({
 
   return (
     <>
-      <Header />
+      <Head>
+        <title>{`Awesome Blog | ${currentCategory.name}`}</title>
+      </Head>
       <div className='wrapper max-w-7xl mx-auto'>
         <IntroText
           title={currentCategory.name}

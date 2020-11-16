@@ -6,10 +6,9 @@ import { useRouter } from 'next/router';
 const MdHeaderLink = ({ text, href, router }) => (
   <a
     href={href}
-    className={`px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ${
-      router.pathname === href ? 'bg-gray-700' : 'bg-black'
-    }`}
-  >
+    className={`px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-900 ${
+      router.pathname === href ? 'bg-gray-900' : 'bg-black'
+    }`}>
     {text}
   </a>
 );
@@ -17,10 +16,9 @@ const MdHeaderLink = ({ text, href, router }) => (
 const MobileHeaderLink = ({ text, href, router }) => (
   <a
     href={href}
-    className={`block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 ${
-      router.pathname === href ? 'bg-gray-700' : 'bg-black'
-    }`}
-  >
+    className={`block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-900 ${
+      router.pathname === href ? 'bg-gray-900' : 'bg-black'
+    }`}>
     {text}
   </a>
 );
@@ -66,15 +64,13 @@ const Header = () => {
                 }}
                 aria-label='Menu toggle button'
                 aria-expanded={`${open ? 'true' : 'false'}`}
-                className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'
-              >
+                className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'>
                 {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
                 <svg
                   className={`${!open ? 'block' : 'hidden'} h-6 w-6`}
                   stroke='currentColor'
                   fill='none'
-                  viewBox='0 0 24 24'
-                >
+                  viewBox='0 0 24 24'>
                   <path
                     strokeLinecap='round'
                     strokeLinejoin='round'
@@ -87,8 +83,7 @@ const Header = () => {
                   className={`${!open ? 'hidden' : 'block'} h-6 w-6`}
                   stroke='currentColor'
                   fill='none'
-                  viewBox='0 0 24 24'
-                >
+                  viewBox='0 0 24 24'>
                   <path
                     strokeLinecap='round'
                     strokeLinejoin='round'

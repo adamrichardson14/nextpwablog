@@ -16,13 +16,11 @@ const Posts = (props) => (
                   query: {
                     slug: post.slug,
                   },
-                }}
-              >
+                }}>
                 <a>
                   <motion.div
                     layoutId={'postImage'}
-                    className='w-20 h-20 mr-4 sm:w-40 sm:h-40  lg:hidden'
-                  >
+                    className='w-20 h-20 mr-4 sm:w-40 sm:h-40  lg:hidden'>
                     <Image
                       src={post.feature_image}
                       alt={post.title}
@@ -35,8 +33,7 @@ const Posts = (props) => (
                   </motion.div>
                   <motion.div
                     layoutId={'postImage'}
-                    className='hidden lg:block'
-                  >
+                    className='hidden lg:block'>
                     <Image
                       src={post.feature_image}
                       alt={post.title}
@@ -55,14 +52,12 @@ const Posts = (props) => (
                     query: {
                       slug: post.slug,
                     },
-                  }}
-                >
+                  }}>
                   <a>
                     <motion.h2
                       layoutId={post.title}
                       animate={{ scale: 1 }}
-                      className='font-bold sm:text-lg md:text-xl lg:text-2xl'
-                    >
+                      className='font-bold sm:text-lg md:text-xl lg:text-2xl'>
                       {post.title}
                     </motion.h2>
                   </a>
@@ -87,8 +82,7 @@ const Posts = (props) => (
                 query: {
                   slug: post.slug,
                 },
-              }}
-            >
+              }}>
               <button className='text-yellow-700 text-base hover:text-yellow-600 sm:hidden pb-3'>
                 Read full post
               </button>
@@ -96,8 +90,6 @@ const Posts = (props) => (
           </React.Fragment>
         );
       })}
-
-      <hr className='border-gray-100 py-1' />
     </div>
   </main>
 );

@@ -9,7 +9,6 @@ import IntroText from '../components/IntroText';
 const Home = () => {
   return (
     <>
-      <Header />
       <h1>Welcome to my website</h1>
     </>
   );

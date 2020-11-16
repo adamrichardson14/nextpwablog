@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../../components/Header';
 import { getData } from '../../../utils/utils';
 import { useRouter } from 'next/router';
 import BackButton from '../../../components/BackButton';
@@ -17,8 +16,8 @@ const Post = ({ post }) => {
         <meta property='og:title' content={post.title} />
         <meta property='og:description' content={post.custom_excerpt} />
         <meta property='og:image' content={post.feature_image} />
+        <title>{`Awesome Blog | ${singlePost.title}`}</title>
       </Head>
-      <Header />
       <div>
         <div className='md:flex md:flex-row-reverse'>
           <header className='md:w-1/2' layoutId={'postImage'}>
@@ -37,8 +36,7 @@ const Post = ({ post }) => {
               <motion.h1
                 animate={{ scale: 1 }}
                 layoutId={'postTitle'}
-                className='font-bold text-xl xl:text-3xl md:text-2xl'
-              >
+                className='font-bold text-xl xl:text-3xl md:text-2xl'>
                 {singlePost.title}
               </motion.h1>
               <div className='space-x-3'>
