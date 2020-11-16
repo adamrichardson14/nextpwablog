@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 const FeaturedPost = ({ post }) => {
   return (
     <>
       <div className='w-11/12 mx-auto relative mb-2'>
         <Image
+          key={post.slug}
           src={post.feature_image}
           width={800}
           height={450}
@@ -17,12 +19,20 @@ const FeaturedPost = ({ post }) => {
             <h2 className='text-white font-bold text-xl lg:text-3xl'>
               {post.title}
             </h2>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='bg-black bg-opacity-50 hover:bg-opacity-75 rounded-lg text-gray-200 px-2 py-1 lg:text-xl outline-none focus:outline-none'>
-              Read full post
-            </motion.button>
+            <Link
+              href={{
+                pathname: '/blog/post/[slug]',
+                query: {
+                  slug: post.slug,
+                },
+              }}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className='bg-black bg-opacity-50 hover:bg-opacity-75 rounded-lg text-gray-200 px-2 py-1 lg:text-xl outline-none focus:outline-none'>
+                Read full post
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>

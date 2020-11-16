@@ -9,6 +9,7 @@ import BackButton from '../../../../components/BackButton';
 import Image from 'next/image';
 import FeaturedPost from '../../../../components/FeaturedPost';
 import Head from 'next/head';
+import Pagination from '../../../../components/Pagination';
 
 const Category = ({
   posts,
@@ -27,10 +28,12 @@ const Category = ({
       <Head>
         <title>{`Awesome Blog | ${currentCategory.name}`}</title>
       </Head>
+
       <div className='wrapper max-w-7xl mx-auto'>
         <IntroText
           title={currentCategory.name}
           description={currentCategory.description}
+          center={true}
         />
 
         <CategoryMenu tags={categories.tags} />
@@ -38,30 +41,7 @@ const Category = ({
 
         <Posts posts={posts} />
         <div className='flex justify-center space-x-3 text-gray-500 font-semibold items-center text-md'>
-          <span className='text-sm'>Page:</span>
-          {Array.from({ length: postMeta.pagination.pages }, (_, index) => {
-            return (
-              <span>
-                <Link
-                  href={{
-                    pathname: '/blog/category/[slug]/[page]',
-                    query: {
-                      slug: slug,
-                      page: index + 1,
-                    },
-                  }}>
-                  <a
-                    className={`${
-                      index === currentPage - 1
-                        ? 'text-yellow-500'
-                        : 'text-gray-500'
-                    }`}>
-                    {index + 1}
-                  </a>
-                </Link>
-              </span>
-            );
-          })}
+          <Pagination postMeta={postMeta} slug={slug} />
           <BackButton router={router} />
         </div>
       </div>
