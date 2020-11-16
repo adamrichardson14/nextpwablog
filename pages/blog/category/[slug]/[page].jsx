@@ -52,14 +52,14 @@ const Category = ({
 export default Category;
 
 export const getStaticProps = async ({ params }) => {
-  const { API_KEY } = process.env;
+  const { API_KEY, URL } = process.env;
   const posts = await getData(
-    `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/?key=${API_KEY}&filter=tag:${params.slug}&fields=title,slug,feature_image,custom_excerpt,published_at,featured&page=${params.page}&limit=10`
+    `${URL}/ghost/api/v3/content/posts/?key=${API_KEY}&filter=tag:${params.slug}&fields=title,slug,feature_image,custom_excerpt,published_at,featured&page=${params.page}&limit=10`
   );
   const postMeta = await posts.meta;
 
   const categories = await getData(
-    `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/tags/?key=${API_KEY}`
+    `${URL}/ghost/api/v3/content/tags/?key=${API_KEY}`
   );
 
   const currentCategory = await categories.tags.find(

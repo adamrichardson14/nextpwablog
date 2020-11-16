@@ -1,30 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next JS Blog Frontend Application
 
-## Getting Started
+## [Preview Demo Website](https://nextpwablognew.vercel.app/blog)
 
-First, run the development server:
+Open for anyone to use. This is designed for use with GhostCMS.
 
-```bash
-npm run dev
-# or
-yarn dev
+### Create a .env file and configure the variables to match your GhostCMS settings.
+
+Create a ghost cms backend with one click on Heroku [link](https://elements.heroku.com/buttons/snathjr/ghost-on-heroku). You will need to add categories within Ghost (tags). Every post should have a defined Excerpt and a featured image within GHOST CMS. You don't need to optimise the image and it's better if you don't. This is taken care of by next/image.
+
+# Install
+
+```
+git clone https://github.com/adamrichardson14/nextpwablog.git
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For your ghost url. Do not include the trailing slash or the following from your api endpoint. /ghost/api/v3/content
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+touch .env
+///env
+API_KEY="YOUR API KEY HERE"
+URL="YOUR BASE URL HERE" Example: URL=https://example.com
+```
 
-## Learn More
+# PWA Configuration
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Generate icons and manifest.json for your PWA. I used [this]() website.
+2. Add your icons to the /public folder
+3. Copy the text from the generation to /public/manifest.json
+4. Add the correct tags to the /pages/\_document.jsx file. Replace my tags and names, or follow [this](https://github.com/shadowwalker/next-pwa) guide.
+5. In Chrome developer tools, use lighthouse to verify installation is correct.

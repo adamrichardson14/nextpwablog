@@ -17,9 +17,9 @@ const Home = () => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const { API_KEY } = process.env;
+  const { API_KEY, URL } = process.env;
   const posts = await getData(
-    `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/?key=${API_KEY}&fields=title,slug,feature_image,custom_excerpt,published_at`
+    `${URL}/ghost/api/v3/content/posts/?key=${API_KEY}&fields=title,slug,feature_image,custom_excerpt,published_at`
   );
   const categories = await getData(
     `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/tags/?key=${API_KEY}`
