@@ -31,3 +31,11 @@ URL="YOUR BASE URL HERE" Example: URL=https://example.com
 3. Copy the text from the generation to /public/manifest.json
 4. Add the correct tags to the /pages/\_document.jsx file. Replace my tags and names, or follow [this](https://github.com/shadowwalker/next-pwa) guide.
 5. In Chrome developer tools, use lighthouse to verify installation is correct.
+
+# Performace
+
+## Desktop
+
+![Lighthouse score](https://i.imgur.com/oa0mrCm.png)
+
+## Mobile
