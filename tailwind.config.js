@@ -11,9 +11,6 @@ module.exports = {
         120: '30rem',
         140: '35rem',
       },
-      fontFamily: {
-        sans: ['Inter Var', ...defaultTheme.fontFamily.sans],
-      },
     },
   },
   variants: {},

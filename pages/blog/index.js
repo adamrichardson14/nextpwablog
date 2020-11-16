@@ -44,7 +44,7 @@ export const getStaticProps = async () => {
   const featuredPost = await posts.posts.find((post) => post.featured);
 
   return {
-    revalidate: 60,
+    revalidate: 1000,
     props: {
       posts: featuredPost
         ? posts.posts.filter((post) => post.slug != featuredPost.slug)

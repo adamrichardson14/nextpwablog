@@ -27,7 +27,7 @@ const Post = ({ post }) => {
               alt={singlePost.title}
               width={1200}
               height={800}
-              quality={60}
+              quality={40}
               layout='responsive'
             />
           </header>
@@ -83,7 +83,7 @@ export const getStaticProps = async ({ params }) => {
     `https://ghostcmsnextjs.herokuapp.com/ghost/api/v3/content/posts/slug/${params.slug}?key=${API_KEY}&include=authors`
   );
   return {
-    revalidate: 60,
+    revalidate: 1000,
     props: {
       post,
     },

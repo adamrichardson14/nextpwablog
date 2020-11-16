@@ -12,6 +12,9 @@ const FeaturedPost = ({ post }) => {
           height={450}
           layout='responsive'
           className='object-cover rounded-lg'
+          alt={post.title}
+          priority={true}
+          quality={40}
         />
 
         <div className='absolute top-0 w-full h-full text-center bg-yellow-700 rounded-lg flex justify-center items-center bg-opacity-25'>

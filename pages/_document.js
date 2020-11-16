@@ -10,7 +10,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
           <link
             rel='apple-touch-icon'
             sizes='57x57'
