@@ -1,9 +1,16 @@
 @import 'tailwindcss/base';
-@import 'tailwindcss/components';
 
 body {
   margin: 0;
   padding: 0;
 }
 
+html {
+  @apply font-sans;
+  @apply antialiased;
+  @apply bg-gray-50;
+  @apply text-black;
+}
+
+@import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import '../styles/styles.css';
 import { AnimateSharedLayout } from 'framer-motion';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
       <AnimateSharedLayout>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </AnimateSharedLayout>
     </>
   );
