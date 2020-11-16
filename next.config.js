@@ -18,5 +18,6 @@ module.exports = withPWA({
       'res-9.cloudinary.com',
       'res-10.cloudinary.com',
     ],
+    deviceSizes: [320, 420, 768, 1024, 1200],
   },
 });
