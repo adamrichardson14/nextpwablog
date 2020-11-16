@@ -2,7 +2,7 @@
 
 ## [Preview Demo Website](https://nextpwablognew.vercel.app/blog)
 
-Open for anyone to use. This is designed for use with GhostCMS.
+Open for anyone to use. This is designed for use with GhostCMS. Take it and create an awesome blog.
 
 ### Create a .env file and configure the variables to match your GhostCMS settings.
 
