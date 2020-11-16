@@ -39,3 +39,5 @@ URL="YOUR BASE URL HERE" Example: URL=https://example.com
 ![Lighthouse score](https://i.imgur.com/oa0mrCm.png)
 
 ## Mobile
+
+![Lighthouse score](https://i.imgur.com/OZvukIv.png)
